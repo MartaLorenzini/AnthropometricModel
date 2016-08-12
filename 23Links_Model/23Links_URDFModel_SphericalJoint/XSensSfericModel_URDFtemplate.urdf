@@ -1,0 +1,1387 @@
+<robot name="XSensSfericModel">
+
+    <link name="ground">
+        <inertial>
+            <mass value="0"/>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+	    <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </visual>
+
+        <collision>
+	    <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </collision>
+    </link>
+	
+    <link name="leftFoot">
+        <inertial>
+            <mass value="FOOTMASS"/>
+            <origin xyz="0 0 FOOTHALFBETA" rpy="0 0 0" />
+            <inertia ixx="FOOTINERTIAIXX" iyy="FOOTINERTIAIYY" izz="FOOTINERTIAIZZ" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+	    <origin xyz="0 0 FOOTHALFBETA" rpy="0 0 0" />
+            <geometry>
+                <box size="FOOTGAMMA FOOTALFA FOOTBETA"/>
+            </geometry>
+        </visual>
+
+        <collision>
+	    <origin xyz="0 0 FOOTHALFBETA" rpy="0 0 0" />
+            <geometry>
+                <box size="FOOTGAMMA FOOTALFA FOOTBETA"/>
+            </geometry>
+        </collision>
+    </link>
+	
+    <link name="leftToe">
+        <inertial>
+            <mass value="TOEMASS"/>
+            <origin xyz="TOEHALFGAMMA 0 0" rpy="0 0 0" />
+            <inertia ixx="TOEINERTIAIXX" iyy="TOEINERTIAIYY" izz="TOEINERTIAIZZ" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="TOEHALFGAMMA 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="TOEGAMMA TOEALFA TOEBETA"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="TOEHALFGAMMA 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="TOEGAMMA TOEALFA TOEBETA"/>
+            </geometry>
+        </collision>
+    </link>
+	
+	<link name="leftLinkAnkle1">
+        <inertial>
+            <mass value="GHOSTMASS"/>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="GHOSTIN" iyy="GHOSTIN" izz="GHOSTIN" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </collision>
+    </link>
+	
+	<link name="leftLinkAnkle2">
+        <inertial>
+            <mass value="GHOSTMASS"/>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="GHOSTIN" iyy="GHOSTIN" izz="GHOSTIN" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="leftLowerLeg">
+        <inertial>
+            <mass value="LOWERLEGMASS"/>
+            <origin xyz="0 0 LOWERLEGHALFHEIGHT" rpy="0 0 0" />
+            <inertia ixx="LOWERLEGINERTIAIXX" iyy="LOWERLEGINERTIAIYY" izz="LOWERLEGINERTIAIZZ" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 LOWERLEGHALFHEIGHT" rpy="0 0 0" />
+            <geometry>
+		<cylinder length="LOWERLEGHEIGHT" radius="LOWERLEGRADIUS"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 LOWERLEGHALFHEIGHT" rpy="0 0 0" />
+            <geometry>
+                <cylinder length="LOWERLEGHEIGHT" radius="LOWERLEGRADIUS"/>
+            </geometry>
+        </collision>
+    </link>
+	
+	<link name="leftLinkKnee1">
+        <inertial>
+            <mass value="GHOSTMASS"/>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="GHOSTIN" iyy="GHOSTIN" izz="GHOSTIN" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </collision>
+    </link>	
+    
+    <link name="leftUpperLeg">
+        <inertial>
+            <mass value="UPPERLEGMASS"/>
+            <origin xyz="0 0 UPPERLEGHALFHEIGHT" rpy="0 0 0" />
+            <inertia ixx="UPPERLEGINERTIAIXX" iyy="UPPERLEGINERTIAIYY" izz="UPPERLEGINERTIAIZZ" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 UPPERLEGHALFHEIGHT" rpy="0 0 0" />
+            <geometry>
+                <cylinder length="UPPERLEGHEIGHT" radius="UPPERLEGRADIUS"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 UPPERLEGHALFHEIGHT" rpy="0 0 0" />
+            <geometry>
+                <cylinder length="UPPERLEGHEIGHT" radius="UPPERLEGRADIUS"/>
+            </geometry>
+        </collision>
+    </link>
+	
+	<link name="leftLinkHip1">
+        <inertial>
+            <mass value="GHOSTMASS"/>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="GHOSTIN" iyy="GHOSTIN" izz="GHOSTIN" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </collision>
+    </link>
+	
+	<link name="leftLinkHip2">
+        <inertial>
+            <mass value="GHOSTMASS"/>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="GHOSTIN" iyy="GHOSTIN" izz="GHOSTIN" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </collision>
+    </link>
+	
+	<link name="pelvis">
+        <inertial>
+            <mass value="PELVISMASS"/>
+            <origin xyz="0 -HIPPOSY PELVISHALFBETA" rpy="0 0 0" />
+            <inertia ixx="PELVISINERTIAIXX" iyy="PELVISINERTIAIYY" izz="PELVISINERTIAIZZ" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 -HIPPOSY PELVISHALFBETA" rpy="0 0 0" />
+            <geometry>
+                <box size="PELVISGAMMA PELVISALFA PELVISBETA"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 -HIPPOSY PELVISHALFBETA" rpy="0 0 0" />
+            <geometry>
+                <box size="PELVISGAMMA PELVISALFA PELVISBETA"/>
+            </geometry>
+        </collision>
+    </link>
+
+	<link name="l5">
+        <inertial>
+            <mass value="L5MASS"/>
+            <origin xyz="0 0 L5HALFHEIGHT" rpy="0 0 0" />
+            <inertia ixx="L5INERTIAIXX" iyy="L5INERTIAIYY" izz="L5INERTIAIZZ" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 L5HALFHEIGHT" rpy="0 0 0" />
+            <geometry>
+                <box size="L5DIAMETERX L5DIAMETERY L5HEIGHT"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 L5HALFHEIGHT" rpy="0 0 0" />
+            <geometry>
+                <box size="L5DIAMETERX L5DIAMETERY L5HEIGHT"/>
+            </geometry>
+        </collision>
+    </link>
+	
+	<link name="torsoLinkL4L31">
+        <inertial>
+            <mass value="GHOSTMASS"/>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="GHOSTIN" iyy="GHOSTIN" izz="GHOSTIN" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </collision>
+    </link>
+	
+	<link name="torsoLinkL4L32">
+        <inertial>
+            <mass value="GHOSTMASS"/>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="GHOSTIN" iyy="GHOSTIN" izz="GHOSTIN" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </collision>
+    </link>	
+	
+	<link name="l3">
+        <inertial>
+            <mass value="L3MASS"/>
+            <origin xyz="0 0 L3HALFHEIGHT" rpy="0 0 0" />
+            <inertia ixx="L3INERTIAIXX" iyy="L3INERTIAIYY" izz="L3INERTIAIZZ" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 L3HALFHEIGHT" rpy="0 0 0" />
+            <geometry>
+                <box size="L3DIAMETERX L3DIAMETERY L3HEIGHT"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 L3HALFHEIGHT" rpy="0 0 0" />
+            <geometry>
+                <box size="L3DIAMETERX L3DIAMETERY L3HEIGHT"/>
+            </geometry>
+        </collision>
+    </link>
+	
+	<link name="t12">
+        <inertial>
+            <mass value="T12MASS"/>
+            <origin xyz="0 0 T12HALFHEIGHT" rpy="0 0 0" />
+            <inertia ixx="T12INERTIAIXX" iyy="T12INERTIAIYY" izz="T12INERTIAIZZ" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 T12HALFHEIGHT" rpy="0 0 0" />
+            <geometry>
+                <box size="T12DIAMETERX T12DIAMETERY T12HEIGHT"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 T12HALFHEIGHT" rpy="0 0 0" />
+            <geometry>
+                <box size="T12DIAMETERX T12DIAMETERY T12HEIGHT"/>
+            </geometry>
+        </collision>
+    </link>
+	
+	<link name="t8">
+        <inertial>
+            <mass value="T8MASS"/>
+            <origin xyz="0 0 T8HALFBETA" rpy="0 0 0" />
+            <inertia ixx="T8INERTIAIXX" iyy="T8INERTIAIYY" izz="T8INERTIAIZZ" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 T8HALFBETA" rpy="0 0 0" />
+            <geometry>
+                <box size="T8GAMMA T8ALFA T8BETA"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 T8HALFBETA" rpy="0 0 0" />
+            <geometry>
+                <box size="T8GAMMA T8ALFA T8BETA"/>
+            </geometry>
+        </collision>
+    </link>
+	
+	<link name="torsoLinkNeck1">
+        <inertial>
+            <mass value="GHOSTMASS"/>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="GHOSTIN" iyy="GHOSTIN" izz="GHOSTIN" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </collision>
+    </link>
+	
+	<link name="torsoLinkNeck2">
+        <inertial>
+            <mass value="GHOSTMASS"/>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="GHOSTIN" iyy="GHOSTIN" izz="GHOSTIN" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </collision>
+    </link>	
+	
+    <link name="neck">
+        <inertial>
+            <mass value="NECKMASS"/>
+            <origin xyz="0 0 NECKHALFHEIGHT" rpy="0 0 0" />
+            <inertia ixx="NECKINERTIAIXX" iyy="NECKINERTIAIYY" izz="NECKINERTIAIZZ" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 NECKHALFHEIGHT" rpy="0 0 0" />
+            <geometry>
+		<cylinder length="NECKHEIGHT" radius="NECKRADIUS"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 NECKHALFHEIGHT" rpy="0 0 0" />
+            <geometry>
+                <cylinder length="NECKHEIGHT" radius="NECKRADIUS"/>
+            </geometry>
+        </collision>
+    </link>	
+	
+	<link name="torsoLinkC1Head1">
+        <inertial>
+            <mass value="GHOSTMASS"/>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="GHOSTIN" iyy="GHOSTIN" izz="GHOSTIN" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </collision>
+    </link>	
+	
+	<link name="head">
+        <inertial>
+            <mass value="HEADMASS"/>
+            <origin xyz="0 0 HEADRADIUS" rpy="0 0 0" />
+            <inertia ixx="HEADINERTIAIXX" iyy="HEADINERTIAIYY" izz="HEADINERTIAIZZ" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 HEADRADIUS" rpy="0 0 0" />
+            <geometry>
+                <sphere radius="HEADRADIUS"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 HEADRADIUS" rpy="0 0 0" />
+            <geometry>
+                <sphere radius="HEADRADIUS"/>
+            </geometry>
+        </collision>
+    </link>
+	
+	<link name="rightLinkHip1">
+        <inertial>
+            <mass value="GHOSTMASS"/>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="GHOSTIN" iyy="GHOSTIN" izz="GHOSTIN" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </collision>
+    </link>
+	
+	<link name="rightLinkHip2">
+        <inertial>
+            <mass value="GHOSTMASS"/>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="GHOSTIN" iyy="GHOSTIN" izz="GHOSTIN" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </collision>
+    </link>
+	
+    <link name="rightUpperLeg">
+        <inertial>
+            <mass value="UPPERLEGMASS"/>
+            <origin xyz="0 0 -UPPERLEGHALFHEIGHT" rpy="0 0 0" />
+            <inertia ixx="UPPERLEGINERTIAIXX" iyy="UPPERLEGINERTIAIYY" izz="UPPERLEGINERTIAIZZ" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 -UPPERLEGHALFHEIGHT" rpy="0 0 0" />
+            <geometry>
+                <cylinder length="UPPERLEGHEIGHT" radius="UPPERLEGRADIUS"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 -UPPERLEGHALFHEIGHT" rpy="0 0 0" />
+            <geometry>
+                <cylinder length="UPPERLEGHEIGHT" radius="UPPERLEGRADIUS"/>
+            </geometry>
+        </collision>
+    </link>
+
+	<link name="rightLinkKnee1">
+        <inertial>
+            <mass value="GHOSTMASS"/>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="GHOSTIN" iyy="GHOSTIN" izz="GHOSTIN" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </collision>
+    </link>		
+
+    <link name="rightLowerLeg">
+        <inertial>
+            <mass value="LOWERLEGMASS"/>
+            <origin xyz="0 0 -LOWERLEGHALFHEIGHT" rpy="0 0 0" />
+            <inertia ixx="LOWERLEGINERTIAIXX" iyy="LOWERLEGINERTIAIYY" izz="LOWERLEGINERTIAIZZ" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 -LOWERLEGHALFHEIGHT" rpy="0 0 0" />
+            <geometry>
+                <cylinder length="LOWERLEGHEIGHT" radius="LOWERLEGRADIUS"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 -LOWERLEGHALFHEIGHT" rpy="0 0 0" />
+            <geometry>
+                <cylinder length="LOWERLEGHEIGHT" radius="LOWERLEGRADIUS"/>
+            </geometry>
+        </collision>
+    </link>
+
+	<link name="rightLinkAnkle1">
+        <inertial>
+            <mass value="GHOSTMASS"/>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="GHOSTIN" iyy="GHOSTIN" izz="GHOSTIN" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </collision>
+    </link>
+	
+	<link name="rightLinkAnkle2">
+        <inertial>
+            <mass value="GHOSTMASS"/>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="GHOSTIN" iyy="GHOSTIN" izz="GHOSTIN" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </collision>
+    </link>	
+
+    <link name="rightFoot">
+        <inertial>
+            <mass value="FOOTMASS"/>
+            <origin xyz="ANKLEPOSX 0 -FOOTHALFBETA" rpy="0 0 0" />
+            <inertia ixx="FOOTINERTIAIXX" iyy="FOOTINERTIAIYY" izz="FOOTINERTIAIZZ" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+	    <origin xyz="ANKLEPOSX 0 -FOOTHALFBETA" rpy="0 0 0" />
+            <geometry>
+                <box size="FOOTGAMMA FOOTALFA FOOTBETA"/>
+            </geometry>
+        </visual>
+
+        <collision>
+	    <origin xyz="ANKLEPOSX 0 -FOOTHALFBETA" rpy="0 0 0" />
+            <geometry>
+                <box size="FOOTGAMMA FOOTALFA FOOTBETA"/>
+            </geometry>
+        </collision>
+    </link>
+        
+    <link name="rightToe">
+        <inertial>
+            <mass value="TOEMASS"/>
+            <origin xyz="TOEHALFGAMMA 0 0" rpy="0 0 0" />
+            <inertia ixx="TOEINERTIAIXX" iyy="TOEINERTIAIYY" izz="TOEINERTIAIZZ" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="TOEHALFGAMMA 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="TOEGAMMA TOEALFA TOEBETA"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="TOEHALFGAMMA 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="TOEGAMMA TOEALFA TOEBETA"/>
+            </geometry>
+        </collision>
+    </link>
+	
+	<link name="leftShoulder">
+        <inertial>
+            <mass value="SHOULDERMASS"/>
+            <origin xyz="0 SHOULDERHALFHEIGHT 0" rpy="0 0 0" />
+            <inertia ixx="SHOULDERINERTIAIXX" iyy="SHOULDERINERTIAIYY" izz="SHOULDERINERTIAIZZ" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 SHOULDERHALFHEIGHT 0" rpy="0 0 0" />
+            <geometry>
+                <box size="SHOULDERDIAMETER SHOULDERHEIGHT SHOULDERDIAMETER"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 SHOULDERHALFHEIGHT 0" rpy="0 0 0" />
+            <geometry>
+                <box size="SHOULDERDIAMETER SHOULDERHEIGHT SHOULDERDIAMETER"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="leftLinkShoulder1">
+        <inertial>
+            <mass value="GHOSTMASS"/>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="GHOSTIN" iyy="GHOSTIN" izz="GHOSTIN" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="leftLinkShoulder2">
+        <inertial>
+            <mass value="GHOSTMASS"/>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="GHOSTIN" iyy="GHOSTIN" izz="GHOSTIN" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </collision>
+    </link>	
+	
+    <link name="leftUpperArm">
+        <inertial>
+            <mass value="UPPERARMMASS"/>
+            <origin xyz="0 UPPERARMRADIUS -ARMPOSZ" rpy="0 0 0" />
+            <inertia ixx="UPPERARMINERTIAIXX" iyy="UPPERARMINERTIAIYY" izz="UPPERARMINERTIAIZZ" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 UPPERARMRADIUS -ARMPOSZ" rpy="0 0 0" />
+            <geometry>
+                <cylinder length="UPPERARMHEIGHT" radius="UPPERARMRADIUS"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 UPPERARMRADIUS -ARMPOSZ" rpy="0 0 0" />
+            <geometry>
+                <cylinder length="UPPERARMHEIGHT" radius="UPPERARMRADIUS"/>
+            </geometry>
+        </collision>
+    </link>	
+	
+	<link name="leftLinkElbow1">
+        <inertial>
+            <mass value="GHOSTMASS"/>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="GHOSTIN" iyy="GHOSTIN" izz="GHOSTIN" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </collision>
+    </link>
+	
+	<link name="leftForeArm">
+        <inertial>
+            <mass value="FOREARMMASS"/>
+            <origin xyz="0 0 -FOREARMHALFHEIGHT" rpy="0 0 0" />
+            <inertia ixx="FOREARMINERTIAIXX" iyy="FOREARMINERTIAIYY" izz="FOREARMINERTIAIZZ" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 -FOREARMHALFHEIGHT" rpy="0 0 0" />
+            <geometry>
+                <cylinder length="FOREARMHEIGHT" radius="FOREARMRADIUS"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 -FOREARMHALFHEIGHT" rpy="0 0 0" />
+            <geometry>
+                <cylinder length="FOREARMHEIGHT" radius="FOREARMRADIUS"/>
+            </geometry>
+        </collision>
+    </link>
+	
+	<link name="leftHand">
+        <inertial>
+            <mass value="HANDMASS"/>
+            <origin xyz="0 0 -HANDHALFBETA" rpy="0 0 0" />
+            <inertia ixx="HANDINERTIAIXX" iyy="HANDINERTIAIYY" izz="HANDINERTIAIZZ" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 -HANDHALFBETA" rpy="0 0 0" />
+            <geometry>
+                <box size="HANDGAMMA HANDALFA HANDBETA"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 -HANDHALFBETA" rpy="0 0 0" />
+            <geometry>
+                <box size="HANDGAMMA HANDALFA HANDBETA"/>
+            </geometry>
+        </collision>
+    </link>
+	
+	<link name="rightShoulder">
+        <inertial>
+            <mass value="SHOULDERMASS"/>
+            <origin xyz="0 -SHOULDERHALFHEIGHT 0" rpy="0 0 0" />
+            <inertia ixx="SHOULDERINERTIAIXX" iyy="SHOULDERINERTIAIYY" izz="SHOULDERINERTIAIZZ" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 -SHOULDERHALFHEIGHT 0" rpy="0 0 0" />
+            <geometry>
+                <box size="SHOULDERDIAMETER SHOULDERHEIGHT SHOULDERDIAMETER"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 -SHOULDERHALFHEIGHT 0" rpy="0 0 0" />
+            <geometry>
+                <box size="SHOULDERDIAMETER SHOULDERHEIGHT SHOULDERDIAMETER"/>
+            </geometry>
+        </collision>
+    </link>
+	
+    <link name="rightLinkShoulder1">
+        <inertial>
+            <mass value="GHOSTMASS"/>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="GHOSTIN" iyy="GHOSTIN" izz="GHOSTIN" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="rightLinkShoulder2">
+        <inertial>
+            <mass value="GHOSTMASS"/>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="GHOSTIN" iyy="GHOSTIN" izz="GHOSTIN" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </collision>
+    </link>	
+	
+    <link name="rightUpperArm">
+        <inertial>
+            <mass value="UPPERARMMASS"/>
+            <origin xyz="0 -UPPERARMRADIUS -ARMPOSZ" rpy="0 0 0" />
+            <inertia ixx="UPPERARMINERTIAIXX" iyy="UPPERARMINERTIAIYY" izz="UPPERARMINERTIAIZZ" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 -UPPERARMRADIUS -ARMPOSZ" rpy="0 0 0" />
+            <geometry>
+                <cylinder length="UPPERARMHEIGHT" radius="UPPERARMRADIUS"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 -UPPERARMRADIUS -ARMPOSZ" rpy="0 0 0" />
+            <geometry>
+                <cylinder length="UPPERARMHEIGHT" radius="UPPERARMRADIUS"/>
+            </geometry>
+        </collision>
+    </link>	
+	
+	<link name="rightLinkElbow1">
+        <inertial>
+            <mass value="GHOSTMASS"/>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="GHOSTIN" iyy="GHOSTIN" izz="GHOSTIN" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="GHOSTDIM GHOSTDIM GHOSTDIM"/>
+            </geometry>
+        </collision>
+    </link>
+	
+	<link name="rightForeArm">
+        <inertial>
+            <mass value="FOREARMMASS"/>
+            <origin xyz="0 0 -FOREARMHALFHEIGHT" rpy="0 0 0" />
+            <inertia ixx="FOREARMINERTIAIXX" iyy="FOREARMINERTIAIYY" izz="FOREARMINERTIAIZZ" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 -FOREARMHALFHEIGHT" rpy="0 0 0" />
+            <geometry>
+                <cylinder length="FOREARMHEIGHT" radius="FOREARMRADIUS"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 -FOREARMHALFHEIGHT" rpy="0 0 0" />
+            <geometry>
+                <cylinder length="FOREARMHEIGHT" radius="FOREARMRADIUS"/>
+            </geometry>
+        </collision>
+    </link>
+	
+	<link name="rightHand">
+        <inertial>
+            <mass value="HANDMASS"/>
+            <origin xyz="0 0 -HANDHALFBETA" rpy="0 0 0" />
+            <inertia ixx="HANDINERTIAIXX" iyy="HANDINERTIAIYY" izz="HANDINERTIAIZZ" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 -HANDHALFBETA" rpy="0 0 0" />
+            <geometry>
+                <box size="HANDGAMMA HANDALFA HANDBETA"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 -HANDHALFBETA" rpy="0 0 0" />
+            <geometry>
+                <box size="HANDGAMMA HANDALFA HANDBETA"/>
+            </geometry>
+        </collision>
+    </link>
+	
+	
+    <joint name="jGround_LeftFoot" type="fixed">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="ground"/>
+        <child link="leftFoot"/>
+    </joint>       
+	
+	<joint name="jLeftBallFoot" type="revolute">
+        <origin xyz="FOOTHALFGAMMA 0 FOOTHALFBETA" rpy="0 0 0"/>
+        <parent link="leftFoot"/>
+        <child link="leftToe"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="0 1 0" />
+    </joint>
+
+    <joint name="jLeftAnklePitch" type="revolute">
+        <origin xyz="-ANKLEPOSX 0 FOOTBETA" rpy="0 0 0"/>
+        <parent link="leftFoot"/>
+        <child link="leftLinkAnkle1"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="0 1 0" />
+    </joint>
+	
+	<joint name="jLeftAnkleRoll" type="revolute">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="leftLinkAnkle1"/>
+        <child link="leftLinkAnkle2"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="1 0 0" />
+    </joint>
+	
+	<joint name="jLeftAnkleYaw" type="revolute">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="leftLinkAnkle2"/>
+        <child link="leftLowerLeg"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="0 0 1" />
+    </joint>
+	
+    <joint name="jLeftKneePitch" type="revolute">
+        <origin xyz="0 0 LOWERLEGHEIGHT" rpy="0 0 0"/>
+        <parent link="leftLowerLeg"/>
+        <child link="leftLinkKnee1"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="0 1 0" />
+    </joint>
+	
+	<joint name="jLeftKneeYaw" type="revolute">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="leftLinkKnee1"/>
+        <child link="leftUpperLeg"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="0 0 1" />
+    </joint>	
+    
+    <joint name="jLeftHipPitch" type="revolute">
+        <origin xyz="0 0 UPPERLEGHEIGHT" rpy="0 0 0"/>
+        <parent link="leftUpperLeg"/>
+        <child link="leftLinkHip1"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="0 1 0" />
+    </joint>
+	
+	<joint name="jLeftHipRoll" type="revolute">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="leftLinkHip1"/>
+        <child link="leftLinkHip2"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="1 0 0" />
+    </joint>	
+	
+    <joint name="jLeftHipYaw" type="revolute">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="leftLinkHip2"/>
+        <child link="pelvis"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="0 0 1" />
+    </joint>	
+
+	<joint name="jL5S1" type="revolute">
+        <origin xyz="0 -HIPPOSY PELVISBETA" rpy="0 0 0"/>
+        <parent link="pelvis"/>
+        <child link="l5"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="0 1 0" />
+    </joint>
+	
+	<joint name="jL4L3Pitch" type="revolute">
+        <origin xyz="0 0 L5HEIGHT" rpy="0 0 0"/>
+        <parent link="l5"/>
+        <child link="torsoLinkL4L31"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="0 1 0" />
+    </joint>
+	
+	<joint name="jL4L3Roll" type="revolute">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="torsoLinkL4L31"/>
+        <child link="torsoLinkL4L32"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="1 0 0" />
+    </joint>
+	
+	<joint name="jL4L3Yaw" type="revolute">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="torsoLinkL4L32"/>
+        <child link="l3"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="0 0 1" />
+    </joint>
+	
+	<joint name="jL1T12" type="revolute">
+        <origin xyz="0 0 L3HEIGHT" rpy="0 0 0"/>
+        <parent link="l3"/>
+        <child link="t12"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="0 1 0" />
+    </joint>
+	
+	<joint name="jT9T8" type="revolute">
+        <origin xyz="0 0 T12HEIGHT" rpy="0 0 0"/>
+        <parent link="t12"/>
+        <child link="t8"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="0 1 0" />
+    </joint>	
+	
+	<joint name="jT1C7Pitch" type="revolute">
+        <origin xyz="0 0 T8BETA" rpy="0 0 0"/>
+        <parent link="t8"/>
+        <child link="torsoLinkNeck1"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="0 1 0" />
+    </joint>
+
+	<joint name="jT1C7Roll" type="revolute">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="torsoLinkNeck1"/>
+        <child link="torsoLinkNeck2"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="1 0 0" />
+    </joint>
+	
+	<joint name="jT1C7Yaw" type="revolute">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="torsoLinkNeck2"/>
+        <child link="neck"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="0 0 1" />
+    </joint>	
+	
+	<joint name="jC1HeadPitch" type="revolute">
+        <origin xyz="0 0 NECKHEIGHT" rpy="0 0 0"/>
+        <parent link="neck"/>
+        <child link="torsoLinkC1Head1"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="0 0 1" />
+    </joint>
+	
+	<joint name="jC1HeadRoll" type="revolute">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="torsoLinkC1Head1"/>
+        <child link="head"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="1 0 0" />
+    </joint>
+	
+    <joint name="jRightHipPitch" type="revolute">
+        <origin xyz="0 -HIPDOUBLEPOSY 0" rpy="0 0 0"/>
+        <parent link="pelvis"/>
+        <child link="rightLinkHip1"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="0 1 0" />
+    </joint>
+	
+	<joint name="jRightHipRoll" type="revolute">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="rightLinkHip1"/>
+        <child link="rightLinkHip2"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="1 0 0" />
+    </joint>	
+	
+    <joint name="jRightHipYaw" type="revolute">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="rightLinkHip2"/>
+        <child link="rightLowerLeg"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="0 0 1" />
+    </joint>	
+
+    <joint name="jRightKneePitch" type="revolute">
+        <origin xyz="0 0 -UPPERLEGHEIGHT" rpy="0 0 0"/>
+        <parent link="rightUpperLeg"/>
+        <child link="rightLinkKnee1"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="0 1 0" />
+    </joint>
+	
+	<joint name="jRightKneeYaw" type="revolute">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="rightLinkKnee1"/>
+        <child link="rightLowerLeg"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="0 0 1" />
+    </joint>	
+
+    <joint name="jRightAnklePitch" type="revolute">
+        <origin xyz="0 0 -LOWERLEGHEIGHT" rpy="0 0 0"/>
+        <parent link="rightLowerLeg"/>
+        <child link="rightLinkAnkle1"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="0 1 0" />
+    </joint>
+	
+	<joint name="jRightAnkleRoll" type="revolute">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="rightLinkAnkle1"/>
+        <child link="rightLinkAnkle2"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="1 0 0" />
+    </joint>
+	
+	<joint name="jRightAnkleYaw" type="revolute">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="rightLinkAnkle2"/>
+        <child link="rightFoot"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="0 0 1" />
+    </joint>
+	
+	<joint name="jRightBallFoot" type="revolute">
+        <origin xyz="TOEPOSX 0 -FOOTHALFBETA" rpy="0 0 0"/>
+        <parent link="rightFoot"/>
+        <child link="rightToe"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="0 1 0" />
+    </joint>
+
+	<joint name="jLeftC7Shoulder" type="revolute">
+        <origin xyz="0 T8HALFALFA SHOULDERURDFPOSZ" rpy="0 0 0"/>
+        <parent link="t8"/>
+        <child link="leftShoulder"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="0 1 0" />
+    </joint>
+	
+	<joint name="jLeftShoulderPitch" type="revolute">
+        <origin xyz="0 SHOULDERHEIGHT 0" rpy="0 0 0"/>
+        <parent link="leftShoulder"/>
+        <child link="leftLinkShoulder1"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="0 1 0" />
+    </joint>
+	
+	<joint name="jLeftShoulderRoll" type="revolute">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="leftLinkShoulder1"/>
+        <child link="leftLinkShoulder2"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="1 0 0" />
+    </joint>	
+	
+    <joint name="jLeftShoulderYaw" type="revolute">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="leftLinkShoulder2"/>
+        <child link="leftUpperArm"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="0 0 1" />
+    </joint>	
+	
+    <joint name="jLeftElbowPitch" type="revolute">
+        <origin xyz="0 UPPERARMRADIUS -ARMURDFPOSZ" rpy="0 0 0"/>
+        <parent link="leftUpperArm"/>
+        <child link="leftLinkElbow1"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="0 1 0" />
+    </joint>	
+	
+	<joint name="jLeftElbowYaw" type="revolute">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="leftLinkElbow1"/>
+        <child link="leftForeArm"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="0 0 1" />
+    </joint>
+	
+	<joint name="jLeftWrist" type="revolute">
+        <origin xyz="0 0 -FOREARMHEIGHT" rpy="0 0 0"/>
+        <parent link="leftForeArm"/>
+        <child link="leftHand"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="0 1 0" />
+    </joint>
+	
+	<joint name="jRightC7Shoulder" type="revolute">
+        <origin xyz="0 -T8HALFALFA SHOULDERURDFPOSZ" rpy="0 0 0"/>
+        <parent link="t8"/>
+        <child link="rightShoulder"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="0 1 0" />
+    </joint>
+
+    <joint name="jRightShoulderPitch" type="revolute">
+        <origin xyz="0 -SHOULDERHEIGHT 0" rpy="0 0 0"/>
+        <parent link="rightShoulder"/>
+        <child link="rightLinkShoulder1"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="0 1 0" />
+    </joint>	
+	
+	<joint name="jRightShoulderRoll" type="revolute">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="rightLinkShoulder1"/>
+        <child link="rightLinkShoulder2"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="1 0 0" />
+    </joint>	
+	
+    <joint name="jRightShoulderYaw" type="revolute">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="rightLinkShoulder2"/>
+        <child link="rightUpperArm"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="0 0 1" />
+    </joint>	
+	
+    <joint name="jRightElbowPitch" type="revolute">
+        <origin xyz="0 -UPPERARMRADIUS -ARMURDFPOSZ" rpy="0 0 0"/>
+        <parent link="rightUpperArm"/>
+        <child link="rightLinkElbow1"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="0 1 0" />
+    </joint>	
+	
+	<joint name="jRightElbowYaw" type="revolute">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="rightLinkElbow1"/>
+        <child link="rightForeArm"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="0 0 1" />
+    </joint>
+	
+	<joint name="jRightWrist" type="revolute">
+        <origin xyz="0 0 -FOREARMHEIGHT" rpy="0 0 0"/>
+        <parent link="rightForeArm"/>
+        <child link="rightHand"/>
+        <dynamics damping="0.1" friction="0.0"/>
+        <limit effort="30" velocity="1.0" lower="-10.0" upper="10.0" />
+        <axis xyz="0 1 0" />
+    </joint>
+	
+</robot>
